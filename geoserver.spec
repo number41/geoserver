@@ -13,7 +13,7 @@ Summary:    Open source server for sharing geospatial data
 Group:      Applications/Internet    
 License:    GPL    
 URL:        http://geoserver.org    
-Source0:    %{name}-%{version}-bin.zip    
+Source0:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}-bin.zip
 Source1:    %{name}.sysconfig
 Source2:    %{name}.service
 
