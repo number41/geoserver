@@ -1,0 +1,14 @@
+[Unit]
+Description=GeoServer
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/geoserver
+Environment="GEOSERVER_HOME=/usr/share/geoserver"
+ExecStart=/usr/share/geoserver/bin/startup.sh
+ExecStop=/usr/share/geoserver/bin/shutdown.sh
+User=geoserver
+Group=geoserver
+
+[Install]
+WantedBy=mutli-user.target
