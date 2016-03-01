@@ -7,7 +7,7 @@
 
 Name:       geoserver
 Version:    2.8.2
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Open source server for sharing geospatial data
 
 Group:      Applications/Internet    
@@ -101,7 +101,14 @@ data from any major spatial data source using open standards.
 # GeoServer stores most of it's programmatic config in the data_dir
 # Be sure not to overwrite anything...
 %defattr(-,geoserver,geoserver,-)
+%dir %{_localstatedir}/lib/%{name}
 %config(noreplace) %{_localstatedir}/lib/%{name}/*
 
 %changelog
+* Mon Feb 29 2016 Sean Peterson <sean.peterson@gmail.com> 2.8.2-2
+- Claim the actual datadir
+
+* Sun Feb 28 2016 Sean Peterson <sean.peterson@gmail.com> 2.8.2-1
+- new package built with tito
+
 
