@@ -16,6 +16,9 @@ URL:        http://geoserver.org
 Source0:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}-bin.zip
 Source1:    %{name}.sysconfig
 Source2:    %{name}.service
+Source3:    http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.2.13.v20150730/jetty-servlets-9.2.13.v20150730.jar
+
+Patch1:     01-enable-cors.patch
 
 Requires(pre):      /usr/sbin/useradd
 Requires(post):     systemd
@@ -32,6 +35,9 @@ data from any major spatial data source using open standards.
 
 %prep
 %{__unzip} %{SOURCE0}
+pushd %{name}-%{version}
+%patch1 -p1
+popd
 
 %build
 
@@ -44,6 +50,9 @@ data from any major spatial data source using open standards.
 %{__rm} -rf %{buildroot}%{_datarootdir}/%{name}/etc
 %{__rm} -rf %{buildroot}%{_datarootdir}/%{name}/logs
 %{__rm} -rf %{buildroot}%{_datarootdir}/%{name}/data_dir
+
+# Patch in jetty-servlets.jar so CORs can be properly supported
+%{__cp} %{SOURCE3} %{buildroot}%{_datarootdir}/%{name}/webapps/geoserver/WEB-INF/lib/
 
 # Configs go in the standard place
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/%{name}
