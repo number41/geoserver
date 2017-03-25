@@ -6,8 +6,8 @@
 %define __osgi_requires %{nil}
 
 Name:       geoserver
-Version:    2.8.2
-Release:    2%{?dist}
+Version:    2.11.0
+Release:    1%{?dist}
 Summary:    Open source server for sharing geospatial data
 
 Group:      Applications/Internet    
@@ -97,6 +97,8 @@ data from any major spatial data source using open standards.
 %{_datarootdir}/%{name}/resources
 %{_datarootdir}/%{name}/start.jar
 %{_datarootdir}/%{name}/webapps
+%{_datarootdir}/%{name}/modules
+%{_datarootdir}/%{name}/start.ini
 
 # GeoServer stores most of it's programmatic config in the data_dir
 # Be sure not to overwrite anything...

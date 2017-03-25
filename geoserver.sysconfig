@@ -1,6 +1,6 @@
 # Configuration file for the GeoServer service
 
-JAVA_HOME=/usr/lib/jvm/jre-1.7.0
+JAVA_HOME=/usr/lib/jvm/jre-1.8.0
 
 # Point GeoServer towards another data_dir
 # GEOSERVER_DATA_DIR=/var/lib/geoserver
