@@ -116,6 +116,10 @@ popd
 %config(noreplace) %{_localstatedir}/lib/%{name}/*
 
 %changelog
+* Sat Mar 25 2017 Sean Peterson <sean.peterson@gmail.com> 2.11.0-1
+- Bump to 2.11.0
+- Enable CORS with jetty-servlets.jar
+
 * Mon Feb 29 2016 Sean Peterson <sean.peterson@gmail.com> 2.8.2-2
 - Claim the actual datadir
 
